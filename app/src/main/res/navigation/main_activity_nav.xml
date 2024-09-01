@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/HomePageFragment">
+
+    <fragment
+        android:id="@+id/HomePageFragment"
+        android:name="com.example.odev4.HomePageFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/mainpageToPageA"
+            app:destination="@id/pageAFragment" />
+        <action
+            android:id="@+id/mainpageToPageX"
+            app:destination="@id/pageXFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageAFragment"
+        android:name="com.example.odev4.PageAFragment"
+        android:label="fragment_sayfa_a"
+        tools:layout="@layout/fragment_page_a" >
+        <action
+            android:id="@+id/PageAToPageB"
+            app:destination="@id/pageBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageBFragment"
+        android:name="com.example.odev4.PageBFragment"
+        android:label="fragment_sayfa_b"
+        tools:layout="@layout/fragment_page_b" >
+        <action
+            android:id="@+id/pageBToPageY"
+            app:destination="@id/pageYFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageXFragment"
+        android:name="com.example.odev4.PageXFragment"
+        android:label="fragment_sayfa_x"
+        tools:layout="@layout/fragment_page_x" >
+        <action
+            android:id="@+id/PageXToPageY"
+            app:destination="@id/pageYFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageYFragment"
+        android:name="com.example.odev4.PageYFragment"
+        android:label="fragment_sayfa_y"
+        tools:layout="@layout/fragment_page_y" >
+        <action
+            android:id="@+id/pageYToHomePage"
+            app:destination="@id/HomePageFragment"
+            app:popUpTo="@id/HomePageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
